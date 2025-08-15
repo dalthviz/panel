@@ -1540,8 +1540,4 @@ class Switch(_BooleanWidget):
     >>> Switch(name='Works with the tools you know and love', value=True)
     """
 
-    _rename: ClassVar[Mapping[str, str | None]] = {
-        'name': None, 'value': 'active'
-    }
-
     _widget_type: ClassVar[type[Model]] = _BkSwitch
