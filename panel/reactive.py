@@ -855,6 +855,8 @@ class Reactive(Syncable, Viewable):
                 widget.jslink(self, value=p, bidirectional=True)
                 if isinstance(widget, LiteralInput):
                     widget.serializer = 'json'
+                    if isinstance(self.param[p], param.Tuple):
+                        widget.type = tuple
             for p in layout_params:
                 widget = style._widgets[p]
                 widget.jslink(self, value=p, bidirectional=p != 'loading')
